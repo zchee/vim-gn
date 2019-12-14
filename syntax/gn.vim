@@ -28,16 +28,18 @@ hi def link     gnPredefVar         Constant
 syn keyword     gnTarget action action_foreach copy executable group
 syn keyword     gnTarget shared_library source_set static_library
 syn keyword     gnTarget loadable_module generated_file
+syn keyword     gnTarget rust_library rust_proc_macro
 hi def link     gnTarget            Type
 
 " Buildfile functions
 syn keyword     gnFunctions assert config declare_args defined exec_script
 syn keyword     gnFunctions foreach get_label_info get_path_info
 syn keyword     gnFunctions get_target_outputs getenv import print
-syn keyword     gnFunctions process_file_template read_file rebase_path
-syn keyword     gnFunctions set_default_toolchain set_defaults
-syn keyword     gnFunctions set_sources_assignment_filter template tool
-syn keyword     gnFunctions toolchain toolchain_args propagates_configs write_file
+syn keyword     gnFunctions process_file_template propagates_configs read_file
+syn keyword     gnFunctions rebase_path set_default_toolchain set_defaults
+syn keyword     gnFunctions set_sources_assignment_filter split_list string_join
+syn keyword     gnFunctions string_split template tool toolchain toolchain_args
+syn keyword     gnFunctions write_file
 hi def link     gnFunctions         Macro
 
 " Variables

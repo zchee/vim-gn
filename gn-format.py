@@ -21,6 +21,8 @@ import vim
 
 # Change this to the full path if gn is not on the path.
 binary = 'gn'
+if vim.eval('exists("g:gn_path")') == "1":
+  binary = vim.eval('g:gn_path')
 
 def main():
   # Get the current text.
@@ -53,7 +55,7 @@ def main():
       lines = lines[:-1]
     sequence = difflib.SequenceMatcher(None, vim.current.buffer, lines)
     for op in reversed(sequence.get_opcodes()):
-      if op[0] is not 'equal':
+      if op[0] != 'equal':
         vim.current.buffer[op[1]:op[2]] = lines[op[3]:op[4]]
 
 main()
